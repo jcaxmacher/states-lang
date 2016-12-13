@@ -27,3 +27,25 @@ class State(object):
     """Base state class"""
     type = attr.ib()
     comment = attr.ib(default="")
+
+
+@attr.s
+class Choice(State):
+    """Choice state class"""
+    choices = attr.ib(default=attr.Factory(list))
+
+
+@attr.s
+class ChoiceRule(object):
+    """A choice rule"""
+    name = attr.ib()
+
+
+@attr.s
+class AndChoiceRule(object):
+    """An `and` choice rule"""
+
+
+@attr.s
+class OrChoiceRule(object):
+    """An `and` choice rule"""
